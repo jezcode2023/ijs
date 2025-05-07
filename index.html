@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0e3a4c", secondary: "#1a4f68" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+      .search-input:focus {
+          outline: none;
+      }
+      .category-card {
+          position: relative;
+          overflow: hidden;
+          height: 200px;
+      }
+      .category-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 1;
+      }
+      .category-content {
+          position: relative;
+          z-index: 2;
+      }
+      .job-card {
+          transition: transform 0.3s ease;
+      }
+      .job-card:hover {
+          transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center">
+          <a href="index.html" class="mr-10">
+            <img src="jobscout.png" alt="JobScout Logo" class="h-40">
+          </a>
+          <nav class="text-2xl md:flex space-x-8">
+            <a href="index.html" class="font-bold text-black hover:text-primary"
+              >HOME</a
+            >
+            <a href="category.html" class="font-bold text-black hover:text-primary"
+              >CATEGORY</a
+            >
+            <a href="company.html" class="font-bold text-black hover:text-primary"
+              >COMPANY</a
+            >
+            <a href="contact.html" class="font-bold text-black hover:text-primary"
+              >CONTACT</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-gray-500 hover:text-primary">Post a Job</a>
+          <button
+            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section
+    class="relative bg-primary py-16 w-full"
+    style="background-image: url('falls.jpg'); background-size: cover; background-position: center;"
+  >
+      <div class="absolute inset-0 bg-primary bg-opacity-80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+          <h1 class="text-4xl font-bold text-white mb-4">
+            Find Your Dream Job Today
+          </h1>
+          <p class="text-xl text-white opacity-90">
+            Connect with thousands of employers and opportunities
+          </p>
+        </div>
+        <div class="max-w-2xl mx-auto">
+          <div class="flex bg-white !rounded-button overflow-hidden shadow-lg">
+            <input
+              type="text"
+              placeholder="Search for jobs, companies, or keywords"
+              class="search-input w-full px-6 py-4 border-none text-gray-700"
+            />
+            <button
+              class="bg-primary text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center"
+            >
+              <span class="w-5 h-5 flex items-center justify-center mr-2">
+                <i class="ri-search-line"></i>
+              </span>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-12">POPULAR CATEGORIES</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Category 1 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=professional%20accountant%20working%20at%20desk%20with%20financial%20documents%2C%20calculator%2C%20computer%20screen%20showing%20spreadsheets%2C%20modern%20office%20setting%2C%20business%20attire%2C%20focused%20on%20work%2C%20clean%20organized%20workspace&width=400&height=200&seq=2&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                ACCOUNTANT/FINANCE
+              </h3>
+              <a
+                href="file:///C:/Users/Jezreel%20Ortiz/Desktop/ijs/category/accounting.html"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=professional%20secretary%20at%20modern%20office%20desk%2C%20organizing%20documents%2C%20answering%20phone%20calls%2C%20using%20computer%2C%20business%20attire%2C%20efficient%20workspace%20organization%2C%20corporate%20environment&width=400&height=200&seq=3&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">SECRETARY</h3>
+              <a
+                href="#"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=virtual%20assistant%20working%20remotely%2C%20home%20office%20setup%20with%20multiple%20screens%2C%20headset%2C%20organized%20desk%2C%20professional%20environment%2C%20digital%20workspace%2C%20video%20conference%20call%20visible%20on%20screen&width=400&height=200&seq=4&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                VIRTUAL ASSISTANT
+              </h3>
+              <a
+                href="#"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=food%20service%20workers%20in%20restaurant%20kitchen%2C%20chef%20and%20waitstaff%2C%20preparing%20meals%2C%20professional%20culinary%20environment%2C%20restaurant%20setting%2C%20food%20preparation%2C%20team%20working%20together&width=400&height=200&seq=5&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">FOOD SERVICE</h3>
+              <a
+                href="#"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Category 5 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=human%20resources%20professionals%20in%20meeting%2C%20discussing%20employee%20profiles%2C%20recruitment%20process%2C%20office%20setting%2C%20business%20attire%2C%20HR%20department%2C%20interview%20process%2C%20professional%20environment&width=400&height=200&seq=6&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">HUMAN RESOURCE</h3>
+              <a
+                href="#"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+
+          <!-- Category 6 -->
+          <div
+            class="category-card rounded-lg overflow-hidden shadow-md"
+            style="background-image: url('https://readdy.ai/api/search-image?query=healthcare%20workers%20in%20hospital%20setting%2C%20doctors%20and%20nurses%2C%20medical%20professionals%2C%20patient%20care%2C%20medical%20facility%2C%20clinical%20environment%2C%20healthcare%20team%2C%20medical%20equipment&width=400&height=200&seq=7&orientation=landscape'); background-size: cover; background-position: center;"
+          >
+            <div class="category-content h-full flex flex-col justify-end p-6">
+              <h3 class="text-xl font-bold text-white mb-3">
+                HEALTHCARE WORKERS
+              </h3>
+              <a
+                href="#"
+                class="bg-black bg-opacity-70 text-white text-center py-2 px-6 !rounded-button inline-block w-24 whitespace-nowrap"
+                >MORE</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Employer CTA -->
+    <section class="bg-primary py-10 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          Employer? Find the perfect team for your business.
+        </h2>
+        <a href="#" class="text-white underline text-lg">Register here</a>
+      </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-12">FEATURED JOBS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <!-- Job 1 -->
+        <a href="file:///C:/Users/Jezreel%20Ortiz/Desktop/ijs/category/senioraccountant.html" class="block">
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">AC</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Senior Accountant</h3>
+                <p class="text-sm opacity-80">Banco De Oro, Quezon Branch</p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • On-site</span>
+              <span>₱75K-₱95K</span>
+            </div>
+          </div>
+        </a>
+
+          <!-- Job 2 -->
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">MS</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Marketing Specialist</h3>
+                <p class="text-sm opacity-80">Robinsons Place, Tubod</p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • Remote</span>
+              <span>₱65K-₱85K</span>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">CA</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Cook Assistant</h3>
+                <p class="text-sm opacity-80">Ellry Cafe, Tibanga</p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • On-site</span>
+              <span>₱20K-₱30K</span>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">HR</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">HR Manager</h3>
+                <p class="text-sm opacity-80">National Grid Corporation of the Philippines</p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • On-site</span>
+              <span>₱80K-₱100K</span>
+            </div>
+          </div>
+
+          <!-- Job 5 -->
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">RN</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Registered Nurse</h3>
+                <p class="text-sm opacity-80">Adventist Medical Center - Iligan</p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • On-site</span>
+              <span>₱20K-$24K</span>
+            </div>
+          </div>
+
+          <!-- Job 6 -->
+          <div class="job-card bg-primary rounded-lg p-6 text-white shadow-md">
+            <div class="flex items-start mb-4">
+              <div
+                class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4"
+              >
+                <span class="text-primary font-bold">PT</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Pick-Up Teller</h3>
+                <p class="text-sm opacity-80">Metrobank - Main Aguinaldo St. </p>
+              </div>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Full-time • On-site</span>
+              <span>₱25K-₱30K</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Seeker CTA -->
+    <section class="bg-primary py-10 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          Looking for a job? Find the perfect job for you
+          <a href="file:///C:/Users/Jezreel%20Ortiz/Desktop/ijs/category.html" class="underline">here</a>.
+        </h2>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-600">
+          © 2025 Iligan JobScout. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-input");
+        searchInput.addEventListener("focus", function () {
+          this.parentElement.classList.add(
+            "ring-2",
+            "ring-primary",
+            "ring-opacity-50",
+          );
+        });
+        searchInput.addEventListener("blur", function () {
+          this.parentElement.classList.remove(
+            "ring-2",
+            "ring-primary",
+            "ring-opacity-50",
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

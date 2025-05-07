@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Categories - Job Portal</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#0e3a4c", secondary: "#1a4f68" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.search-input:focus {
+outline: none;
+}
+.category-card {
+position: relative;
+overflow: hidden;
+height: 200px;
+}
+.category-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.4);
+z-index: 1;
+}
+.category-content {
+position: relative;
+z-index: 2;
+}
+.job-card {
+transition: transform 0.3s ease;
+}
+.job-card:hover {
+transform: translateY(-5px);
+}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<div class="flex items-center">
+    <a href="file:///C:/Users/Jezreel%20Ortiz/Desktop/ijs/index.html" class="mr-10">
+        <img src="jobscout.png" alt="JobScout Logo" class="h-40">
+      </a>
+<nav class="text-2xl  md:flex space-x-8">
+<a href="file:///C:/Users/Jezreel%20Ortiz/Desktop/ijs/index.html" class="font-bold text-black hover:text-primary">HOME</a>
+<a href="category.html" class="font-bold text-black hover:text-primary">CATEGORY</a>
+<a href="company.html" class="font-bold text-black hover:text-primary">COMPANY</a>
+<a href="contact.html" class="font-bold text-black hover:text-primary">CONTACT</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="text-black hover:text-primary">Post a Job</a>
+<button class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap">Sign In</button>
+</div>
+</div>
+</header>
+
+
+<div class="flex items-center space-x-4">
+
+</div>
+</div>
+</header>
+
+</script>
+</body>
+</html>
