@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Categories - Job Portal</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#0e3a4c", secondary: "#1a4f68" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.search-input:focus {
+outline: none;
+}
+.category-card {
+position: relative;
+overflow: hidden;
+height: 200px;
+}
+.category-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.4);
+z-index: 1;
+}
+.category-content {
+position: relative;
+z-index: 2;
+}
+.job-card {
+transition: transform 0.3s ease;
+}
+.job-card:hover {
+transform: translateY(-5px);
+}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center">
+        <a href="ijs/index.html" class="mr-10">
+            <img src="ijs/jobscout.png" alt="JobScout Logo" class="h-40">
+          </a>
+    <nav class="text-2xl  md:flex space-x-8">
+        <a href="ijs/index.html" class="font-bold text-black hover:text-primary">HOME</a>
+        <a href="ijs/category.html" class="font-bold text-black hover:text-primary">CATEGORY</a>
+        <a href="ijs/company.html" class="font-bold text-black hover:text-primary">COMPANY</a>
+        <a href="ijs/contact.html" class="font-bold text-black hover:text-primary">CONTACT</a>
+        </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+    <a href="#" class="text-black hover:text-primary">Post a Job</a>
+    <button class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap">Sign In</button>
+    </div>
+    </div>
+    </header>
+<!-- Hero Section with Search -->
+<section class="relative bg-primary py-16 w-full" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20modern%20office%20environment%20with%20blue%20tones%2C%20clean%20workspace%2C%20business%20atmosphere%2C%20soft%20lighting%2C%20minimal%20design%2C%20workspace%20with%20computers%20and%20office%20supplies%2C%20corporate%20setting%2C%20blurred%20background%20for%20text%20overlay&width=1280&height=400&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary bg-opacity-80"></div>
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl mx-auto text-center mb-10">
+<h1 class="text-4xl font-bold text-white mb-4">Find Your Dream Job Today</h1>
+<p class="text-xl text-white opacity-90">Connect with thousands of employers and opportunities</p>
+</div>
+<div class="max-w-2xl mx-auto">
+<div class="flex bg-white !rounded-button overflow-hidden shadow-lg">
+<input type="text" placeholder="Search for jobs, companies, or keywords" class="search-input w-full px-6 py-4 border-none text-gray-700">
+<button class="bg-primary text-white px-8 py-4 !rounded-button whitespace-nowrap flex items-center">
+<span class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-search-line"></i>
+</span>
+Search
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Categories List -->
+<section class="py-16 bg-white min-h-screen">
+<div class="container mx-auto px-4 max-w-4xl">
+<div class="bg-white rounded-lg shadow-lg p-8">
+<div class="mb-8">
+<div class="flex items-center gap-6 mb-6">
+<div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+<span class="text-2xl font-bold text-primary">TC</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-gray-900">Accounting Assistant</h1>
+<p class="text-lg text-gray-600">Banco De Oro - Quezon Branch</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 text-sm text-gray-600">
+<span class="flex items-center gap-1">
+<i class="ri-map-pin-line"></i> Quezon Avenue, Iligan City
+</span>
+<span class="flex items-center gap-1">
+<i class="ri-time-line"></i> Full-time
+</span>
+<span class="flex items-center gap-1">
+<i class="ri-money-dollar-circle-line"></i> ₱35K-₱40K
+</span>
+</div>
+</div>
+<div class="space-y-8">
+<div>
+<h2 class="text-xl font-semibold text-gray-900 mb-4">Company Overview</h2>
+<p class="text-gray-600 leading-relaxed"> Banco De Oro (BDO) is one of the Philippines’ largest and most trusted banks, known for its commitment to service excellence and financial innovation. With an extensive network of branches and digital banking services, BDO empowers individuals and businesses to achieve financial goals. Our culture is built on integrity, customer focus, and professional growth—making BDO a dynamic workplace for top-tier talent.
+</p>
+</div>
+<div>
+<h2 class="text-xl font-semibold text-gray-900 mb-4">Job Description</h2>
+<p class="text-gray-600 leading-relaxed mb-4">Accounting Assistant.</p>
+<ul class="list-disc list-inside text-gray-600 space-y-2">
+  <h2 class="text-xl font-semibold text-gray-900 mb-4">Required Experience</h2>
+  <ul class="list-disc list-inside text-gray-600 space-y-2"></ul>
+<li>Graduate of BS Accountancy, Finance, Banking, Commerce with relevant work experience</li>
+<li>Good oral and written communication skills</li>
+<li>Fresh graduates are welcome to apply</li>
+
+</ul>
+</div>
+\
+<h2 class="text-xl font-semibold text-gray-900 mb-4">Benefits</h2>
+<ul class="list-disc list-inside text-gray-600 space-y-2">
+    <li>Competitive salary and annual bonus potential</li>
+    <li>Health, dental, and vision insurance</li>
+    <li>Professional development and CPA support</li>
+    <li>Generous paid time off and holidays</li>
+</ul>
+</div>
+<div class="mt-10">
+<button class="w-full bg-primary text-white py-4 !rounded-button text-lg font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
