@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign In - Iligan JobScout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#0e3a4c", secondary: "#1a4f68" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <!-- Logo -->
+    <div class="mb-6">
+      <img
+        src="jobscout.png"
+        alt="Iligan JobScout Logo"
+        class="h-80 w-auto"
+      />
+    </div>
+
+    <!-- Signing In Section -->
+    <div class="bg-white p-7 rounded-lg shadow-md w-full max-w-md text-center mb-3">
+      <h2 class="text-black text-2xl font-bold mb-6">Signing in as...</h2>
+      <a
+        href="jobseekerreg.html"
+        class="block w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary mb-4 transition"
+      >
+        Job Seeker
+      </a>
+      <a
+        href="company-signin.html"
+        class="block w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition"
+      >
+        Company
+      </a>
+    </div>
+  </body>
+</html>
+ 
