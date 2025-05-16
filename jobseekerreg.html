@@ -24,21 +24,29 @@
       body { font-family: 'Inter', sans-serif; }
     </style>
   </head>
-  <body class="bg-white h-full width-full flex flex-col items-center justify-center">
-    <!-- Logo -->
-    <div class="mb-8 flex flex-col items-center">
-      <img src="jobscout.png" alt="Iligan JobScout Logo" class="h-40 w-auto mb-2" />
-      
-    </div>
+  
+  <body class="bg-white min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-4 flex flex-col items-center">
+        <nav class="text-2xl flex space-x-8 justify-center w-full">
+          <a href="index.html" class="font-bold text-black hover:text-primary">HOME</a>
+          <a href="category.html" class="font-bold text-black hover:text-primary">CATEGORY</a>
+          <a href="company.html" class="font-bold text-black hover:text-primary">COMPANY</a>
+          <a href="contact.html" class="font-bold text-black hover:text-primary">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+  
 
     <!-- Registration Form -->
-    <h1 class="text-3xl font-bold mb-6 text-center">Job Seeker’s Registration</h1>
+    <h1 class="text-3xl font-bold mt-5 mb-5 text-center">Job Seeker’s Registration</h1>
     <form class="bg-primary max-w-md w-full mx-auto rounded-xl p-6 flex flex-col gap-2 mb-6">
       <label class="text-white text-sm font-normal" for="fullname">Full Name</label>
       <input id="fullname" type="text" class="rounded px-2 py-1 mb-2" />
 
-      <label class="text-white text-sm font-normal" for="dob">Date of birth: DD/MM/YEAR</label>
-      <input id="dob" type="text" class="rounded px-2 py-1 mb-2" />
+      <label class="text-white text-sm font-normal" for="dob">Date of birth</label>
+      <input id="dob" type="date" class="rounded px-2 py-1 mb-2" />
 
       <label class="text-white text-sm font-normal" for="email">Email Address</label>
       <input id="email" type="email" class="rounded px-2 py-1 mb-2" />
@@ -57,7 +65,7 @@
 
     <div class="text-center font-semibold text-lg">
       Already have an account?
-      <a href="jobseeker-login.html" class="text-blue-700 underline font-bold">Log in here.</a>
+      <a href="jobseekerlogin.html" class="text-blue-700 underline font-bold">Log in here.</a>
     </div>
   </body>
 </html>
